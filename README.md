@@ -108,20 +108,3 @@ pyodbc  →  SQL Server (view/table)  →  DataFrame  →  PandasAI Agent  →  
 3. The DataFrame is wrapped in `pai.DataFrame(...)` with metadata so PandasAI understands the data
 4. A PandasAI `Agent` is created and handles user questions via `agent.chat(...)`
 5. Responses are rendered in Streamlit as a table, number, text, or chart depending on type
-
----
-
-## 🧯 Troubleshooting
-
-| Error | Cause | Fix |
-|---|---|---|
-| `No matching distribution found for pandasai-litellm` | System Python is too new (needs `<3.12`) | Pin project to Python 3.11 with `uv python pin 3.11` |
-| `ModuleNotFoundError` when running `python file.py` | Running outside the project's virtual environment | Use `uv run python file.py` instead |
-| `module 'litellm' has no attribute 'custom_provider_map'` | Installed `litellm` version too new for `pandasai-litellm` | Pin an older version: `uv add "litellm<1.60"` |
-| `Database connection error` | Wrong `.env` values, driver not installed, or firewall blocking connection | Verify ODBC driver with `pyodbc.drivers()`, double-check `.env` credentials |
-
----
-
-## 📄 License
-
-Add your license here.
